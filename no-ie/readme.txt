@@ -40,6 +40,9 @@ Mildly better in that it supports PNG Transparency, but not by much.
 
 == Upgrade Notice ==
 
+= 1.0.1 =
+No major changes, just updating a deprecated function call.
+
 = 1.0 =
 Not Applicable.  Initial Release.
 
