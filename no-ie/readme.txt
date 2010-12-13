@@ -10,7 +10,7 @@ For users that are using IE6 or IE7, this widget will display a reminder for the
 
 == Description ==
 
-Something I’ve had sitting about my hard drive for a while, this plugin gives you the ability to display a widget to your visitors that use IE6 (and optionally IE7), reminding them to upgrade their browser!  It can display a link to download the current versions of Google Chrome, Mozilla Firefox, Apple Safari, Opera, or Internet Explorer — entirely up to you which of the five are offered to the user, and whether the order is randomized on each page load.
+This plugin gives you the ability to display a widget to your visitors that use IE6 (and optionally IE7), reminding them to upgrade their browser!  It can display a link to download the current versions of Google Chrome, Mozilla Firefox, Apple Safari, Opera, or Internet Explorer — entirely up to you which of the five are offered to the user, and whether the order is randomized on each page load.
 
 == Installation ==
 
@@ -31,6 +31,9 @@ Mildly better in that it supports PNG Transparency, but not by much.
 == Screenshots ==
 
 == Changelog ==
+
+= 1.0.1 =
+* Fixed Widget hooks.  They had been using deprecated calls.
 
 = 1.0 =
 * Release.

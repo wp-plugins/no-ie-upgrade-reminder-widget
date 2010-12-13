@@ -3,9 +3,9 @@
 Plugin Name: NO-IE
 Plugin URI: http://www.Stephanis.info/
 Description: If the user is currently using an outdated version of IE, this widget will display a reminder for them to upgrade.
+Version: 1.0.1
 Author: E. George Stephanis
 Author URI: http://www.Stephanis.info/
-Version: 1.0
 */
 
 register_activation_hook	(	__FILE__,			array('noie', 'activate')		);
@@ -32,8 +32,8 @@ class noie {
 	
 	function register()
 	{
-		register_sidebar_widget('NO IE', array('noie', 'widget'));
-		register_widget_control('NO IE', array('noie', 'control'));
+		wp_register_sidebar_widget('no-ie', 'NO IE', array('noie', 'widget'));
+		wp_register_widget_control('no-ie', 'NO IE', array('noie', 'control'));
 	}
 	
 	function control()
@@ -44,17 +44,17 @@ class noie {
 		if (isset($_POST['noie_random'])){		update_option( 'noie_random', esc_attr( $_POST['noie_random'] ) );						}
 		?>
 		<p><label><strong>Widget Title:</strong><br />
-		<input class="widefat" type="text" name="noie_title" value="<?php echo get_option( 'noie_title' ); ?>" /></label></p>'
-		<p><strong>Version:</strong><br />'
+		<input class="widefat" type="text" name="noie_title" value="<?php echo get_option( 'noie_title' ); ?>" /></label></p>
+		<p><strong>Version:</strong><br />
 		<label><input type="radio" name="noie_version" value="6" <?php echo get_option('noie_version')=='6'?'checked="checked" ':''; ?>/> &le; IE 6</label><br />
 		<label><input type="radio" name="noie_version" value="7" <?php echo get_option('noie_version')=='7'?'checked="checked" ':''; ?>/> &le; IE 7</label></p>
-		<p><strong>Offer Links To:</strong><br />'
+		<p><strong>Offer Links To:</strong><br />
 		<label><input type="checkbox" name="noie_browsers[]" value="firefox" <?php echo strpos(get_option('noie_browsers'),'firefox')!==FALSE?'checked="checked" ':''; ?>/> <img src="<?php echo WP_PLUGIN_URL; ?>/no-ie/img/firefox.png" height="16" width="16" alt="Mozilla Firefox" /> Firefox</label><br />
 		<label><input type="checkbox" name="noie_browsers[]" value="chrome" <?php echo strpos(get_option('noie_browsers'),'chrome')!==FALSE?'checked="checked" ':''; ?>/> <img src="<?php echo WP_PLUGIN_URL; ?>/no-ie/img/chrome.png" height="16" width="16" alt="Google Chrome" /> Chrome</label><br />
 		<label><input type="checkbox" name="noie_browsers[]" value="safari" <?php echo strpos(get_option('noie_browsers'),'safari')!==FALSE?'checked="checked" ':''; ?>/> <img src="<?php echo WP_PLUGIN_URL; ?>/no-ie/img/safari.png" height="16" width="16" alt="Apple Safari" /> Safari</label><br />
 		<label><input type="checkbox" name="noie_browsers[]" value="opera" <?php echo strpos(get_option('noie_browsers'),'opera')!==FALSE?'checked="checked" ':''; ?>/> <img src="<?php echo WP_PLUGIN_URL; ?>/no-ie/img/opera.png" height="16" width="16" alt="Opera" /> Opera</label><br />
 		<label><input type="checkbox" name="noie_browsers[]" value="ie" <?php echo strpos(get_option('noie_browsers'),'ie')!==FALSE?'checked="checked" ':''; ?>/> <img src="<?php echo WP_PLUGIN_URL; ?>/no-ie/img/ie.png" height="16" width="16" alt="Internet Explorer" /> Internet Explorer</label></p>
-		<p><strong>Randomize Browser Links:</strong><br />'
+		<p><strong>Randomize Browser Links:</strong><br />
 		<label><input type="radio" name="noie_random" value="YES" <?php echo get_option('noie_random')=='YES'?'checked="checked" ':''; ?>/> Yes</label><br />
 		<label><input type="radio" name="noie_random" value="NO" <?php echo get_option('noie_random')=='NO'?'checked="checked" ':''; ?>/> No</label></p>
 		<?php 
@@ -103,5 +103,5 @@ class noie {
 		
 		return $returnThis;
 	}
-	
 }
+
