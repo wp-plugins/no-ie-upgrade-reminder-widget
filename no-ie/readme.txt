@@ -28,8 +28,6 @@ Due to a lack of support for most modern web authoring techniques both in CSS an
 
 Mildly better in that it supports PNG Transparency, but not by much.
 
-== Screenshots ==
-
 == Changelog ==
 
 = 1.0.1 =
